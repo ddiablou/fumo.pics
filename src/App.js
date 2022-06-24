@@ -1,7 +1,7 @@
 import "./App.css";
 import { useEffect } from "react";
 import { randomFumo } from "fumo-api";
-function App() {
+export default function App() {
   useEffect(() => {
     async function fetchFumo() {
       randomFumo().then((url) => {
