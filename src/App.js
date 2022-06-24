@@ -4,9 +4,12 @@ import { randomFumo } from "fumo-api";
 
 function App() {
   useEffect(() => {
-    randomFumo().then((url) => {
-      document.getElementById("randomFumoWrapper").src = url;
-    });
+    function fetchFumoFu() {
+      randomFumo().then((url) => {
+        document.getElementById("randomFumoWrapper").src = url;
+      });
+    }
+    fetchFumoFu()
   }, []);
   // Rendering time: Fumos may be slow to render because useEffect hook.
   return (
