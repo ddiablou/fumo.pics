@@ -1,28 +1,27 @@
 import "./App.css";
 import { useEffect } from "react";
 import { randomFumo } from "fumo-api";
-
 function App() {
   useEffect(() => {
-    function fetchFumoFu() {
+    async function fetchFumo() {
       randomFumo().then((url) => {
-        document.getElementById("randomFumoWrapper").src = url;
+        document.getElementById("randomFumoWrapper").src = url
       });
     }
-    fetchFumoFu()
+    fetchFumo();
   }, []);
   // Rendering time: Fumos may be slow to render because useEffect hook.
   return (
     <>
-      <img
-        alt="RandomFumo"
-        width={"full"}
-        height={"full"}
-        id="randomFumoWrapper"
-        src={undefined}
-      />
+      <div
+        style={{
+          marginLeft: "auto",
+          marginRight: "auto",
+          position: "relative",
+        }}
+      >
+        <img alt="RandomFumo" id="randomFumoWrapper" src={undefined} />
+      </div>
     </>
   );
 }
-
-export default App;
