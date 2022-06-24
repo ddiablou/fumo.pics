@@ -12,4 +12,4 @@ root.render(
 );
 
 // ANALYTICS
-reportWebVitals(console.log)
+reportWebVitals()
